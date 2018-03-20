@@ -6,3 +6,4 @@
 /**/*.psd
 /**/Thumbs.db
 /**/*.DS_Store
+.idea/vcs.xml
