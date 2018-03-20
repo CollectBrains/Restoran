@@ -1,0 +1,43 @@
+=default-font
+	font-family: 'Yeseva One', cursive
+	font-weight: normal
+	font-style: normal
+
+=gentum-font
+	font-family: 'Gentium Book Basic', serif
+	font-weight: 700
+	font-style: normal
+
+=lato-font
+	font-family: "Lato", sans-serif
+	font-weight: normal
+	font-style: normal
+
+=open-font
+	font-family: "Open Sans", sans-serif
+	font-style: normal
+
+$breaksmall: 500px
+
+$breaklarge: 1180px
+
+=r($media)
+	@if $media == pda
+		@media only screen and (max-width: $breaksmall)
+			@content
+
+=placeholder
+	&:-ms-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&::-webkit-input-placeholder
+		@content
+	&::placeholder
+		@content
+
+$accent: #c89f2d
+
+

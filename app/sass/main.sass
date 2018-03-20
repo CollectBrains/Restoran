@@ -1,0 +1,357 @@
+@import "reset"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	+default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.btn
+	display: inline-block
+	border: 1px solid #000000
+	color: #fff
+	text-decoration: none
+	background-color: rgba(#000000, .6)
+	padding: 15px 45px
+	font-size: 18px
+	text-transform: uppercase
+	letter-spacing: 3px
+	text-align: center
+	position: relative
+	+lato-font
+	outline: none
+	transition: background-color .1s ease
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: rgba(#000000, .5)
+	&:active
+		background-color: rgba(#000000, .7)
+
+.btn__white
+	background-color: rgba(#fff, .4)
+	border: 1px solid #fff
+	&:hover
+		background-color: rgba(#fff, .3)
+	&:active
+		background-color: rgba(#fff, .5)
+
+.container
+	max-width: 1280px
+	margin: 0 auto
+	padding: 0 15px 0 15px
+
+.header
+	position: relative
+	width: 100%
+	-webkit-background-size: cover
+	background-size: cover
+	background-repeat: no-repeat
+	height: 100vh
+
+.top-line
+	width: 100%
+	display: flex
+	flex-wrap: nowrap
+	flex: 1 0 100%
+	align-items: center
+
+.logo-wrap
+	margin: 10px 0 0 5px
+
+.logo
+	img
+		display: block
+		max-width: 100%
+
+.main-nav
+	margin-left: auto
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+	li
+		display: inline-block
+		a
+			display: block
+			color: #ffffff
+			+gentum-font
+			font-size: 21px
+			line-height: 110px
+			padding-left: 15px
+			padding-right: 15px
+			text-decoration: none
+			border-top: 3px solid transparent
+			transition: all .3s
+			&:hover, &:focus
+				text-decoration: none
+				text-transform: none
+				border-top: 3px solid #e8e8e8
+
+.soc-wrap
+	text-align: center
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+	li
+		display: inline-block
+		a
+			font-size: 22px
+			color: #dab33e
+			[class*='icon']
+				transition: color .3s
+			&:hover
+				[class*='icon']
+					color: darken(#dab33e, 10%)
+
+.header__content
+	text-align: center
+	margin-top: 15vh
+
+.hero
+	position: relative
+	+default-font
+	font-size: 90px
+	color: #ffffff
+	line-height: 1.2
+	&::before
+		content: ''
+		background-image: url('../img/icons/Decoration1.png')
+		position: absolute
+		top: 100%
+		left: 50%
+		margin-top: 20px
+		margin-left: -116px
+		width: 232px
+		height: 43px
+
+.btn-wrap
+	margin-top: 100px
+	.btn:first-child
+		margin-right: 25px
+
+//promo ========================================
+
+.promo
+	padding: 75px 0
+	.container
+		display: flex
+	&__right
+		width: 44.16%
+		margin-left: 70px
+		img
+			display: block
+			max-width: 100%
+
+.cook
+	text-align: center
+	display: flex
+	flex-direction: column
+	max-width: 430px
+	min-width: 320px
+	width: 34.4%
+	margin-left: 110px
+	&__text
+		color: #4c4c4c
+		+lato-font
+		font-size: 16px
+		margin-top: 55px
+	img
+		display: block
+		max-width: 100%
+		width: 220px
+		height: auto
+		margin-left: auto
+		margin-top: 48px
+
+.cook__title, .h2--gold
+	position: relative
+	color: #cc9900
+	+default-font
+	font-size: 36px
+	&::before
+		content: ''
+		background-image: url('../img/icons/Divider.png')
+		position: absolute
+		top: 100%
+		left: 50%
+		width: 248px
+		height: 24px
+		margin-left: -124px
+		-webkit-background-size: cover
+		background-size: cover
+		background-repeat: no-repeat
+
+//ingredients=========================================
+
+.ingredients
+	-webkit-background-size: cover
+	background-size: cover
+	background-repeat: no-repeat
+	padding: 100px 0 100px 0
+	.container
+		display: flex
+
+.ing-card
+	width: 45.6%
+	padding: 72px 80px 72px
+	margin-left: auto
+	background-color: rgba(#000, .62)
+	text-align: center
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	&__text
+		+lato-font
+		font-size: 16px
+		color: #ffffff
+		margin-bottom: 65px
+
+.ing-card__title, .h2
+	position: relative
+	color: #ffffff
+	text-align: center
+	+default-font
+	font-size: 36px
+	margin-bottom: 55px
+	&::before
+		content: ''
+		position: absolute
+		background-image: url('../img/icons/Divider1.png')
+		top: 100%
+		left: 50%
+		width: 248px
+		height: 24px
+		margin-left: -124px
+
+//menus========================================
+
+.menus
+	padding: 100px 0 100px
+	.container
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+
+.menu-wrap
+	width: 82.4%
+	display: flex
+	justify-content: space-between
+	margin-bottom: 60px
+
+.menu__card
+	width: 41.7%
+	text-align: center
+
+.menu__title
+	margin-bottom: 65px
+
+.menu__item
+	+default-font
+	margin-bottom: 35px
+	> div
+		display: flex
+		align-items: baseline
+		justify-content: space-between
+		color: $accent
+		font-size: 21px
+		line-height: 1.6
+		border-bottom: 1px solid $accent
+		margin-bottom: 8px
+	> p
+		+lato-font
+		text-align: left
+		color: #4c4c4c
+		font-size: 16px
+
+
+
+//review========================================
+
+.review
+	-webkit-background-size: cover
+	background-size: cover
+	background-repeat: no-repeat
+	padding: 100px 0 100px
+	.container
+		display: flex
+		align-content: center
+		justify-content: center
+
+.rev-card
+	width: 61.6%
+	background-color: rgba(#000, .82)
+	text-align: center
+	padding: 75px 80px 100px
+	&__text
+		position: relative
+		color: #dde0df
+		+gentum-font
+		font-size: 25px
+		line-height: 1.8
+		margin-bottom: 40px
+		&::before
+			content: '\201c'
+			position: absolute
+			right: 100%
+			top: 0
+			font-family: Georgia, serif
+			font-size: 96px
+			margin-top: -58px
+	&__sign
+		+lato-font
+		font-size: 18px
+		color: #ffffff
+
+
+
+@import "media" // Всегда в конце
