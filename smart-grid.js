@@ -11,7 +11,7 @@ const settings = {
 	},
 	breakPoints: {
 		md: {
-			width: "992px",
+			width: "1020px",
 			fields: "20px"
 		},
 		sm: {
