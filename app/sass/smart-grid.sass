@@ -24,6 +24,46 @@ $fields_sm: 10px
 $fields_xs: 5px
 $fields_xxs: 5px
 
+=clearfix()
+	&::after
+		display: block
+		content: ""
+		clear: both
+
+
+=md($name, $value)
+	@media screen and (max-width: $break_md)
+		#{$name}: $value
+
+=md-block()
+	@media screen and (max-width: $break_md)
+		@content
+
+=sm($name, $value)
+	@media screen and (max-width: $break_sm)
+		#{$name}: $value
+
+=sm-block()
+	@media screen and (max-width: $break_sm)
+		@content
+
+=xs($name, $value)
+	@media screen and (max-width: $break_xs)
+		#{$name}: $value
+
+=xs-block()
+	@media screen and (max-width: $break_xs)
+		@content
+
+=xxs($name, $value)
+	@media screen and (max-width: $break_xxs)
+		#{$name}: $value
+
+=xxs-block()
+	@media screen and (max-width: $break_xxs)
+		@content
+
+
 =wrapper-full()
 	padding-left: $fields
 	padding-right: $fields
@@ -235,38 +275,6 @@ $fields_xxs: 5px
 	$val: 100% / $columns * $n
 	+xxs(padding-right, #{calc(#{$val} + #{$offset_xxs_one_side})})
 
-=md($name, $value)
-	@media screen and (max-width: $break_md)
-		#{$name}: $value
-
-=md-block()
-	@media screen and (max-width: $break_md)
-		@content
-
-=sm($name, $value)
-	@media screen and (max-width: $break_sm)
-		#{$name}: $value
-
-=sm-block()
-	@media screen and (max-width: $break_sm)
-		@content
-
-=xs($name, $value)
-	@media screen and (max-width: $break_xs)
-		#{$name}: $value
-
-=xs-block()
-	@media screen and (max-width: $break_xs)
-		@content
-
-=xxs($name, $value)
-	@media screen and (max-width: $break_xxs)
-		#{$name}: $value
-
-=xxs-block()
-	@media screen and (max-width: $break_xxs)
-		@content
-
 =from($min_width)
 	@media screen and (min-width: $min_width)
 		@content
@@ -346,9 +354,4 @@ $fields_xxs: 5px
 				outline: $outline
 				background: $background
 
-=clearfix()
-	&::after
-		display: block
-		content: ""
-		clear: both
-	
+

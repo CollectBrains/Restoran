@@ -182,7 +182,6 @@ body
 	+to(1020px)
 		display: none
 
-
 .soc-wrap
 	text-align: center
 	ul
@@ -347,32 +346,35 @@ body
 	+xxs-block
 		font-size: 30px
 
-
-.ing-card__wrap
-	display: flex
-	justify-content: center
-
 //menus========================================
 
 .menus
 	padding: 100px 0 100px
 	.container
-		display: flex
 		justify-content: center
-		flex-wrap: wrap
 
 .menu-wrap
-	width: 82.4%
-	display: flex
+	+row-flex
 	justify-content: space-between
-	margin-bottom: 60px
+	+sm-block
+		justify-content: center
 
 .menu__card
-	width: 41.7%
+	+col
+	+size(4)
+	+size-md(6)
+	+size-sm(8)
+	+size-xs(12)
+	+shift(1)
+	+shift-md(0)
 	text-align: center
+	+xs-block
+		padding: 0 15px
 
 .menu__title
 	margin-bottom: 65px
+	+xxs-block
+		font-size: 30px
 
 .menu__item
 	+default-font
@@ -392,8 +394,6 @@ body
 		color: #4c4c4c
 		font-size: 16px
 
-
-
 //review========================================
 
 .review
@@ -401,23 +401,38 @@ body
 	background-size: cover
 	background-repeat: no-repeat
 	padding: 100px 0 100px
-	.container
-		display: flex
-		align-content: center
+	.row
+		+row-flex
 		justify-content: center
 
 .rev-card
-	width: 61.6%
+	+col
+	+size(8)
+	+size-md(10)
+	+size-sm(12)
 	background-color: rgba(#000, .82)
 	text-align: center
 	padding: 75px 80px 100px
+	+xs-block
+		padding: 75px 15px 75px
+	&__title
+		+xs-block
+			font-size: 30px
 	&__text
 		position: relative
 		color: #dde0df
+		text-align: left
 		+gentum-font
 		font-size: 25px
 		line-height: 1.8
 		margin-bottom: 40px
+		+xs-block
+			font-size: 20px
+			text-align: center
+			&::before
+				display: none
+		+xxs-block
+			font-size: 16px
 		&::before
 			content: '\201c'
 			position: absolute
@@ -435,26 +450,9 @@ body
 
 .booking
 	padding: 100px 0 100px
-	.container
-		display: flex
-		flex-wrap: wrap
-
-.image-side
-	display: flex
-	flex: 1 1 45.6%
-	img
-		margin-left: 30px
-		max-width: 100%
-		-webkit-background-size: cover
-		background-size: cover
-
-.form-side
-	display: flex
-	flex: 0 1 34.4%
-	flex-direction: column
-	text-align: center
-	.h2--gold
-		margin-bottom: 60px
+	.row
+		+row-flex
+		justify-content: center
 
 .booking__text
 	color: #4c4c4c
@@ -466,28 +464,55 @@ body
 	&:nth-last-of-type(1)
 		margin-bottom: 40px
 
-.form
-	display: flex
-	flex-direction: column
-	flex-wrap: wrap
+.image-side
+	+col
+	+size(3)
+	+size-md(4)
+	+size-sm(5)
+	+size-xs(6)
+	+md-block
+		margin-bottom: 30px
+	img
+		display: block
+		max-width: 100%
+		height: auto
+		-webkit-background-size: cover
+		background-size: cover
 
-.form__item
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
-	margin-bottom: 26px
-	&:nth-last-of-type(1)
-		margin-bottom: 32px
+.form-side
+	+col
+	+size(4)
+	+size-md(6)
+	+size-sm(10)
+	+shift(1)
+	+shift-sm(0)
+	flex-direction: column
+	text-align: center
+	.h2--gold
+		margin-bottom: 60px
+		margin-top: -15px
+		+to(1150px)
+			font-size: 30px
+		+xxs-block
+			font-size: 26px
+
+.form
+	+row-flex
+
+.input-wrap
+	+col
+	+size(6)
+	+size-xxs(12)
+	text-align: left
+	margin-bottom: 25px
 	label
-		text-align: left
 		+open-font
 		font-weight: 700
 		color: #c9a131
 		font-size: 14px
 
 .form__input
-	display: flex
-	width: 200px
+	width: 100%
 	height: 34px
 	border: 1px solid #c8c6c6
 	background-color: #f6f7f7
@@ -520,10 +545,9 @@ body
 	font-size: 16px
 	color: #ffffff
 	+open-font
-	.container
-		display: flex
-		flex-wrap: wrap
-		justify-content: space-between
+	.row
+		+row-flex
+		justify-content: center
 	.h2
 		font-size: 21px
 		&::before
@@ -533,16 +557,22 @@ body
 			top: calc(100% + 10px)
 
 .about
-	flex: 0 1 370px
+	+col
+	+size(4)
+	+size-sm(8)
+	+size-xs(10)
 	text-align: center
-	margin: 0 30px
+	+sm-block
+		margin-bottom: 30px
 	&__text
 		line-height: 1.5
 
 .hours
-	flex: 0 1 230px
+	+col
+	+size(4)
+	+size-sm(6)
+	+size-xs(10)
 	text-align: center
-	margin: 0 30px
 	&__text:nth-last-of-type(1)
 		margin-bottom: 50px
 
@@ -563,7 +593,10 @@ body
 		opacity: .6
 
 .location
-	margin: 0 30px
+	+col
+	+size(4)
+	+size-sm(6)
+	+size-xs(10)
 	text-align: center
 
 .location__text
