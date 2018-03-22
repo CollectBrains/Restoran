@@ -49,10 +49,55 @@ body
 	overflow-x: hidden
 	opacity: 1
 
+//.debag
+	+debug(rgba(0,0,0, .5), 1px solid #fff)
+
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
+
+.toggle-wrap
+	width: 40px
+	height: 38px
+	margin-right: 15px
+	background-color: #000
+	text-align: center
+	+from(1020px)
+		display: none
+	+md-block
+		margin-left: auto
+
+.toggle-mnu
+	display: block
+	width: 28px
+	height: 28px
+	margin: 10px auto
+	span:after, span:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+	span:after
+		top: 18px
+	span
+		position: relative
+		display: block
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		background-color: #fff
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+	&.on span
+		background-color: transparent
+	&.on span:before
+		transform: rotate(45deg) translate(-1px, 0px)
+	&.on span:after
+		transform: rotate(-45deg) translate(6px, -7px)
+	+from(1020px)
+		display: none
 
 .btn
 	display: inline-block
@@ -86,9 +131,7 @@ body
 		background-color: rgba(#fff, .5)
 
 .container
-	max-width: 1280px
-	margin: 0 auto
-	padding: 0 15px 0 15px
+	+wrapper
 
 .header
 	position: relative
@@ -136,6 +179,9 @@ body
 				text-decoration: none
 				text-transform: none
 				border-top: 3px solid #e8e8e8
+	+to(1020px)
+		display: none
+
 
 .soc-wrap
 	text-align: center
@@ -153,6 +199,8 @@ body
 			&:hover
 				[class*='icon']
 					color: darken(#dab33e, 10%)
+	+xxs-block
+		display: none
 
 .header__content
 	text-align: center
@@ -174,33 +222,47 @@ body
 		margin-left: -116px
 		width: 232px
 		height: 43px
+	+md-block
+		font-size: 60px
+	+xs-block
+		font-size: 50px
+	+xxs-block
+		font-size: 40px
 
 .btn-wrap
 	margin-top: 100px
 	.btn:first-child
 		margin-right: 25px
+		+xs-block
+			margin-right: 0
+	.btn
+		+xs-block
+			margin-bottom: 20px
 
 //promo ========================================
 
 .promo
 	padding: 75px 0
-	.container
-		display: flex
+	.row
+		+row-flex
 	&__right
-		width: 44.16%
-		margin-left: 70px
+		+col
+		+size(5)
+		+size-md(6)
+		+shift-left(1)
+		+shift-md-left(0)
+		+size-sm(12)
 		img
 			display: block
 			max-width: 100%
 
 .cook
 	text-align: center
-	display: flex
-	flex-direction: column
-	max-width: 430px
-	min-width: 320px
-	width: 34.4%
-	margin-left: 110px
+	+col
+	+size(6)
+	+size-sm(12)
+	+xxs-block
+		margin-bottom: 20px
 	&__text
 		color: #4c4c4c
 		+lato-font
@@ -231,6 +293,8 @@ body
 		-webkit-background-size: cover
 		background-size: cover
 		background-repeat: no-repeat
+	+xxs-block
+		font-size: 30px
 
 //ingredients=========================================
 
@@ -239,18 +303,22 @@ body
 	background-size: cover
 	background-repeat: no-repeat
 	padding: 100px 0 100px 0
-	.container
-		display: flex
+	.row
+		+row-flex
+		justify-content: flex-end
 
 .ing-card
-	width: 45.6%
-	padding: 72px 80px 72px
-	margin-left: auto
+	+col
+	+size(6)
+	+size-md(8)
+	+size-sm(12)
+	padding: 72px 80px 80px 72px
 	background-color: rgba(#000, .62)
 	text-align: center
-	display: flex
 	flex-direction: column
-	flex-wrap: wrap
+	flex-wrap: nowrap
+	+to(450px)
+		padding: 50px 5px 50px
 	&__text
 		+lato-font
 		font-size: 16px
@@ -276,6 +344,13 @@ body
 		background-size: cover
 		background-position: center
 		margin-left: -124px
+	+xxs-block
+		font-size: 30px
+
+
+.ing-card__wrap
+	display: flex
+	justify-content: center
 
 //menus========================================
 
