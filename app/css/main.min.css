@@ -352,9 +352,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  min-height: 650px;
 }
 
 .top-line {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -380,6 +382,47 @@ body {
 .logo img {
   display: block;
   max-width: 100%;
+}
+
+.hidden-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.82);
+  text-align: center;
+  display: none;
+}
+
+.hidden-menu > ul > li {
+  display: block;
+  padding: 5px 0;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.hidden-menu > ul > li:first-child {
+  padding-top: 10px;
+}
+
+.hidden-menu > ul > li:last-child {
+  padding-bottom: 10px;
+}
+
+.hidden-menu > ul > li:hover {
+  background-color: #000;
+}
+
+.hidden-menu > ul > li a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.hidden-menu > ul > li > a:hover {
+  text-decoration: none;
 }
 
 .main-nav {
@@ -1235,6 +1278,14 @@ body {
     padding-right: 10px;
   }
 
+  .header {
+    background-position: center;
+  }
+
+  .logo-wrap {
+    width: 120px;
+  }
+
   .promo__right {
     width: -webkit-calc(100% - 30px);
     width: calc(100% - 30px);
@@ -1313,6 +1364,10 @@ body {
     padding-right: 5px;
   }
 
+  .soc-wrap {
+    display: none;
+  }
+
   .hero {
     font-size: 50px;
   }
@@ -1386,10 +1441,6 @@ body {
   .container {
     padding-left: 5px;
     padding-right: 5px;
-  }
-
-  .soc-wrap {
-    display: none;
   }
 
   .hero {

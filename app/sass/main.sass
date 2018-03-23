@@ -49,9 +49,6 @@ body
 	overflow-x: hidden
 	opacity: 1
 
-//.debag
-	+debug(rgba(0,0,0, .5), 1px solid #fff)
-
 .img-responsive
 	display: block
 	max-width: 100%
@@ -140,8 +137,12 @@ body
 	background-size: cover
 	background-repeat: no-repeat
 	height: 100vh
+	min-height: 650px
+	+to(720px)
+		background-position: center
 
 .top-line
+	position: relative
 	width: 100%
 	display: flex
 	flex-wrap: nowrap
@@ -150,11 +151,41 @@ body
 
 .logo-wrap
 	margin: 10px 0 0 5px
+	+to(720px)
+		width: 120px
 
 .logo
 	img
 		display: block
 		max-width: 100%
+
+.hidden-menu
+	position: absolute
+	top: 100%
+	left: 0
+	width: 100%
+	z-index: 10
+	margin-top: 20px
+	background-color: rgba(#000, .82)
+	text-align: center
+	display: none
+	> ul
+		> li
+			display: block
+			padding: 5px 0
+			transition: all .3s
+			&:first-child
+				padding-top: 10px
+			&:last-child
+				padding-bottom: 10px
+			&:hover
+				background-color: #000
+			a
+				text-decoration: none
+				font-size: 20px
+			> a:hover
+				text-decoration: none
+
 
 .main-nav
 	margin-left: auto
@@ -198,7 +229,7 @@ body
 			&:hover
 				[class*='icon']
 					color: darken(#dab33e, 10%)
-	+xxs-block
+	+xs-block
 		display: none
 
 .header__content

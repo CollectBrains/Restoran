@@ -8,4 +8,7 @@ $(function() {
 		heightDetect();
 	});
 
+	$(".toggle-wrap").on('click', function (e) {
+		$(".hidden-menu").slideToggle();
+	})
 });
